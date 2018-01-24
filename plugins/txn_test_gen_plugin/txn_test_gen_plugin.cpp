@@ -215,6 +215,8 @@ struct txn_test_gen_plugin_impl {
          throw fc::exception(fc::invalid_operation_exception_code);
       if(batch_size < 1 || batch_size > 250)
          throw fc::exception(fc::invalid_operation_exception_code);
+      if(batchsize & 1)
+         throw fc::exception(fc::invalid_operation_exception_code);
 
       running = true;
 
