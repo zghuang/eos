@@ -21,19 +21,19 @@
 
 extern "C" {
    /**
-    * Return the set of active producers
-    * @param producers - a pointer to an buffer of account_names
-    * @param datalen - byte length of buffer
-    * @return the number of bytes actually populated
+    * @brief Return the set of active producers
+    * @details Return the set of active producers
+    *
+    * @param producers - location to store the active producers
     *
     *  Example:
     *  @code
     *  account_name producers[21];
-    *  uint32_t bytes_populated = get_active_producers(producers, sizeof(account_name)*21);
+    *  get_active_producers(producers, sizeof(account_name)*21);
     *  @endcode
     */
 
-   uint32_t get_active_producers( account_name* producers, uint32_t datalen );
+   void get_active_producers( account_name* producers, uint32_t datalen );
 
    ///@ } chaincapi
 }

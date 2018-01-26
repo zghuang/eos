@@ -37,7 +37,7 @@ namespace eosio { namespace chain {
       account_name               account;
       action_name                name;
       vector<permission_level>   authorization;
-      bytes                      data;
+      vector<char>               data;
 
       action(){}
 
@@ -55,10 +55,6 @@ namespace eosio { namespace chain {
          name        = T::get_name();
          authorization = move(auth);
          data        = fc::raw::pack(value);
-      }
-
-      action( vector<permission_level> auth, account_name account, action_name name, const bytes& data )
-            : account(account), name(name), authorization(move(auth)), data(data) {
       }
 
       template<typename T>

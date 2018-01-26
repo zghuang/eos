@@ -94,7 +94,7 @@ class apply_context {
       bool                     all_authorizations_used()const;
       vector<permission_level> unused_authorizations()const;
 
-      vector<account_name> get_active_producers() const;
+      void get_active_producers(account_name* producers, uint32_t len);
 
       const chain_controller&       controller;
       const chainbase::database&    db;  ///< database where state is stored
